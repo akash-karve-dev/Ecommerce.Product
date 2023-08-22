@@ -31,7 +31,7 @@ namespace Product.Application.Features.Products
                 var domainProduct = _mapper.Map<Domain.Models.Product>(request);
 
                 await _productRepository.AddAsync(domainProduct);
-                
+
                 return Unit.Value;
             }
         }

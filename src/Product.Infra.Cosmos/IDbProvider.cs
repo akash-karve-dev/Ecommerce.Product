@@ -10,7 +10,7 @@ namespace Product.Infra.Cosmos
         Database GetDatabase();
     }
 
-    public class CosmosDbProvider : IDbProvider
+    internal class CosmosDbProvider : IDbProvider
     {
         private readonly CosmosDbConfiguration _dbConfiguration;
         private CosmosClient? _client;

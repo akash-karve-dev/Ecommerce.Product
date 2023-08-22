@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace Product.Infra.Cosmos.Mapper
 {
-    public class ProductMapping : Profile
+    internal sealed class ProductMapping : Profile
     {
         public ProductMapping()
         {

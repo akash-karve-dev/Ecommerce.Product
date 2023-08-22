@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Product.Job.Outbox": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7048",
+      "launchBrowser": false
+    }
+  }
+}

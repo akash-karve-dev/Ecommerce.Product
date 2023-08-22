@@ -7,7 +7,7 @@ namespace Product.Infra.Cosmos
     /// <summary>
     /// Custom serialzier, as cosmos db client does not expose way to customize serialization
     /// </summary>
-    internal class CosmosSystemTextJsonSerializer : CosmosSerializer
+    internal sealed class CosmosSystemTextJsonSerializer : CosmosSerializer
     {
         private readonly JsonObjectSerializer _systemTextJsonSerializer;
 

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "type": "appInsights.sdk"
+    },
+    "storage1": {
+      "type": "storage.emulator",
+      "connectionId": "AzureWebJobsStorage"
+    },
+    "cosmosdb1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.DocumentDB/databaseAccounts/ecommcomos",
+      "type": "cosmosdb.azure",
+      "connectionId": "AccountEndpoint=https://ecommcomos.documents.azure.com:443/;AccountKey=Dk3RdrdQSsvFN38v95alLK9J9poIQ9AeXPn3ssuMgzmMQBTAqL6jSwO8vB8klOIzpjmNgwVDDLEGACDbf7N6Og==;",
+      "dynamicId": null
+    }
+  }
+}
