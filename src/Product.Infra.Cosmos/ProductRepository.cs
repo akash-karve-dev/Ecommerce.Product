@@ -5,8 +5,9 @@ using Product.Infra.Cosmos.Models;
 
 namespace Product.Infra.Cosmos
 {
-    public class ProductRepository : IProductRepository
+    internal class ProductRepository : IProductRepository
     {
+        private const string ContainerName = "Products";
         private readonly Container _container;
         private readonly IMapper _mapper;
 
@@ -14,7 +15,7 @@ namespace Product.Infra.Cosmos
             IDbProvider dbProvider,
             IMapper mapper)
         {
-            _container = dbProvider.GetDatabase().GetContainer("Orders");
+            _container = dbProvider.GetDatabase().GetContainer(ContainerName);
             _mapper = mapper;
         }
 
@@ -33,6 +34,7 @@ namespace Product.Infra.Cosmos
 
             if (!transactionBatchResponse.IsSuccessStatusCode)
             {
+                // TODO: THROW CUSTOM EXCEPTION
                 throw new Exception(transactionBatchResponse.ErrorMessage);
             }
         }
