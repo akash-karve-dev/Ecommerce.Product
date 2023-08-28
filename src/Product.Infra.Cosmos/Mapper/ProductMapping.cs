@@ -11,7 +11,7 @@ namespace Product.Infra.Cosmos.Mapper
         {
             CreateMap<Domain.Models.Product, CosmosProduct>()
                 .ForMember(dest => dest.PartitionKey,
-                cfg => cfg.MapFrom(src => src.Id.ToString()));
+                cfg => cfg.MapFrom(src => src.Category));
 
             CreateMap<Domain.Models.Product, OutboxEntity>()
                 .ForMember(dest => dest.Id,
@@ -21,7 +21,7 @@ namespace Product.Infra.Cosmos.Mapper
             .ForMember(dest => dest.EventPayload,
                 cfg => cfg.MapFrom(src => JsonSerializer.Serialize(src, SerializerOptions.DefaultSerializerOptions())))
                 .ForMember(dest => dest.PartitionKey,
-                cfg => cfg.MapFrom(src => src.Id.ToString()));
+                cfg => cfg.MapFrom(src => src.Category));
         }
     }
 }
