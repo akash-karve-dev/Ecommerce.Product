@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Product.Presentation.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Product.Presentation.Api.Controllers.ProductsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Product.Presentation.Api.Controllers.ProductsController.#ctor(MediatR.IMediator)">
+            <summary>
+            
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Product.Presentation.Api.Controllers.ProductsController.CreateProduct(Product.Application.Dtos.Input.CreateProductDto)">
+            <summary>
+            
+            </summary>
+            <param name="productDto"></param>
+            <returns></returns>
+            <exception cref="T:Microsoft.AspNetCore.Http.BadHttpRequestException"></exception>
+        </member>
+    </members>
+</doc>

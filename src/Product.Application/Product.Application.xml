@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Product.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Product.Application.Dtos.Input.CreateProductDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Product.Application.Dtos.Input.CreateProductDto.Name">
+             <summary>
+            
+             </summary>
+             <example>Refrigerator</example>
+        </member>
+        <member name="P:Product.Application.Dtos.Input.CreateProductDto.ProductCategory">
+             <summary>
+            
+             </summary>
+             <example>HOME_APPLIANCES</example>
+        </member>
+        <member name="M:Product.Application.SerializerOptions.DefaultSerializerOptions(System.Text.Json.Serialization.JsonConverter[])">
+            <summary>
+            Get json serializer options
+            </summary>
+            <param name="customConverters">List of custom json converters</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

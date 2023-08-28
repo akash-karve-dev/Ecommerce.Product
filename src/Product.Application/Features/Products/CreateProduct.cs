@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using Product.Application.Contracts;
 using Product.Application.Dtos.Input;
+using Product.Domain.Enums;
 
 namespace Product.Application.Features.Products
 {
@@ -11,7 +13,17 @@ namespace Product.Application.Features.Products
         {
         }
 
-        // TODO: FLUENT VALIDATION
+        public class Validator : AbstractValidator<Command>
+        {
+            public Validator()
+            {
+                RuleFor(x => x.Name)
+                    .NotEmpty();
+
+                RuleFor(x => x.ProductCategory)
+                    .IsEnumName(typeof(ProductCategory), false);
+            }
+        }
 
         public class Handler : IRequestHandler<Command, Unit>
         {
