@@ -5,17 +5,30 @@ using Product.Application.Features.Products;
 
 namespace Product.Presentation.Api.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/products")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mediator"></param>
         public ProductsController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productDto"></param>
+        /// <returns></returns>
+        /// <exception cref="BadHttpRequestException"></exception>
         [HttpPost("")]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductDto productDto)
         {

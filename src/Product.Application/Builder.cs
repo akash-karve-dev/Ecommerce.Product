@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using Product.Application.Behaviors;
 
 namespace Product.Application
 {
@@ -10,6 +13,9 @@ namespace Product.Application
             {
                 cfg.RegisterServicesFromAssembly(typeof(Builder).Assembly);
             });
+
+            services.AddValidatorsFromAssembly(typeof(Builder).Assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             services.AddAutoMapper(typeof(Builder));
 
