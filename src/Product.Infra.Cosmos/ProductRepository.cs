@@ -21,11 +21,13 @@ namespace Product.Infra.Cosmos
 
         public async Task AddAsync(Domain.Models.Product product)
         {
+            var partitionKey = product.Category.ToString();
+
             var cosmosProduct = _mapper.Map<CosmosProduct>(product);
 
             var outboxEntity = _mapper.Map<OutboxEntity>(product);
 
-            var transactionalBatch = _container.CreateTransactionalBatch(new PartitionKey(product.Id.ToString()));
+            var transactionalBatch = _container.CreateTransactionalBatch(new PartitionKey(partitionKey));
 
             transactionalBatch.CreateItem(cosmosProduct);
             transactionalBatch.CreateItem(outboxEntity);
